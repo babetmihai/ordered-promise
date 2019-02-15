@@ -1,3 +1,4 @@
+
 const queueWrapper = (fn) => {
   const promiseQueue = []
   return (...args) => new Promise((resolve, reject) => {
@@ -35,6 +36,7 @@ const queueWrapper = (fn) => {
     })
   }
 
+// test
 const delayedLog = (delay) => new Promise((resolve) => setTimeout(() => {
   resolve(delay)
 }, delay))
