@@ -11,10 +11,7 @@ const orderedPromise = (fn) => {
     fn(...args)
       .then((res) => _lastPromise.then(() => resolve(res)))
       .catch((error) => _lastPromise.then(() => reject(error)))
-      .finally(() => {
-        lastResolve()
-        if (lastPromise === _lastPromise) lastPromise = Promise.resolve()
-      })
+      .finally(() => lastResolve())
     })
 }
 
@@ -26,5 +23,5 @@ orderedLog(100).then(console.log)
 orderedLog(2000).then(console.log)
 orderedLog(1000).then(console.log)
 orderedLog(500).then(console.log)
-delay(300).then(() => orderedLog(450).then(console.log))
-delay(400).then(() => orderedLog(250).then(console.log))
+delay(300).then(() => orderedLog(1300).then(console.log))
+delay(400).then(() => orderedLog(400).then(console.log))
