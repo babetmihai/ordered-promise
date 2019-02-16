@@ -1,6 +1,6 @@
 {
   "name": "ordered-promise",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "wrapper that makes asynchronous services return in the order they were called",
   "main": "dist/index",
   "scripts": {

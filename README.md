@@ -2,12 +2,17 @@ wrapper that makes asynchronous services return in the order they were called
 
 #### Setup
 ```
-const orderedPromise = require('ordered-promise)
-const delay = (time) => new Promise((resolve) => setTimeout(() => resolve(time), time))
-const orderedLog = orderedPromise(delay)
+npm i -S ordered-promise
+```
+```
+const orderedPromise = require('ordered-promise')
 ```
 
 #### Example
+```
+const delay = (time) => new Promise((resolve) => setTimeout(() => resolve(time), time))
+const orderedLog = orderedPromise(delay)
+```
 ```
 orderedLog(100).then(console.log)
 orderedLog(2000).then(console.log)
