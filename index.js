@@ -22,11 +22,7 @@ const queueWrapper = (fn) => {
   }
 
 // test
-const logDelay = (delay) => new Promise((resolve) => setTimeout(() => {
-  resolve(delay)
-}, delay))
-
-
+const logDelay = (delay) => new Promise((resolve) => setTimeout(() => resolve(delay), delay))
 const orderedLog = queueWrapper(logDelay)
 
 orderedLog(1005).then(console.log).then(() => orderedLog(105).then(console.log))
